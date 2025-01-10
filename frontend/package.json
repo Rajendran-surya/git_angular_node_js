@@ -1,0 +1,19 @@
+{
+  "name": "course-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Course Management Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server .",
+    "dev": "http-server -p 8080"
+  },
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-route": "^1.8.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,94 @@
+<div class="container" ng-controller="DashboardController">
+
+      <h1>MY Profile</h1>
+      <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: fit-content; border-radius: 5px; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+        <div style="margin-bottom: 5px;">
+            <strong style="color: #555;">User Image:</strong> 
+            <img ng-src="http://localhost:3000/{{ users.profile_image }}" alt="Profile Image" />
+        </div>
+        
+        <!-- Update Profile Image Button -->
+       
+        
+        <input ng-click="Uploadimage()" id="fileinput" type="file" accept="image/*">
+            Update Image
+
+        
+        <div style="margin-bottom: 5px;">
+            <strong style="color: #555;">User Name:</strong> 
+            <span style="color: #333;">{{ users.name }}</span>
+        </div>
+        <div style="margin-bottom: 5px;">
+            <strong style="color: #555;">User Email:</strong> 
+            <span style="color: #333;">{{ users.email }}</span>
+        </div>
+        <div style="margin-bottom: 5px;">
+            <strong style="color: #555;">User Latitude:</strong> 
+            <span style="color: #333;">{{ users.latitude }}</span>
+        </div>
+        <div>
+            <strong style="color: #555;">User Longitude:</strong> 
+            <span style="color: #333;">{{ users.longitude }}</span>
+        </div>
+    </div>
+    
+    
+    <h2>Dashboard</h2>
+    <button ng-click="signOut()">Sign Out</button>
+    <h3>Available Courses For Loged in user</h3>
+    <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; text-align: left;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Board</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="course in courses">
+                <td>
+                    <input type="text" ng-model="course.id" style="width: 100%; border: 1px solid #ccc;" readonly />
+                </td>
+                <td>
+                    <input type="text" ng-model="course.class" style="width: 100%; border: 1px solid #ccc;" />
+                </td>
+                <td>
+                    <input type="text" ng-model="course.subject" style="width: 100%; border: 1px solid #ccc;" />
+                </td>
+                <td>
+                    <input type="text" ng-model="course.board" style="width: 100%; border: 1px solid #ccc;" />
+                </td>
+                <td>
+                    <input type="text" ng-model="course.latitude" style="width: 100%; border: 1px solid #ccc;" />
+                </td>
+                <td>
+                    <input type="text" ng-model="course.longitude" style="width: 100%; border: 1px solid #ccc;" />
+                </td>
+                <td>
+                    <button ng-click="updateCourse(course)" style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 3px; cursor: pointer;">
+                        Update
+                    </button>
+                    <button ng-click="deleteCourse(course.id)" style="padding: 5px 10px; background-color: #F44336; color: white; border: none; border-radius: 3px; cursor: pointer;">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+
+    <h3>Create a Course</h3>
+    <form ng-submit="createCourse()">
+        <input type="text" ng-model="course.class" placeholder="Class" required>
+        <input type="text" ng-model="course.subject" placeholder="Subject" required>
+        <input type="text" ng-model="course.board" placeholder="Board" required>
+        <input type="text" ng-model="course.latitude" placeholder="latitude" required>
+        <input type="text" ng-model="course.longitude" placeholder="longitude" required>
+        <button type="submit">Create Course</button>
+    </form>
+</div>

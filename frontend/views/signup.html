@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Signup</h2>
+    <form ng-submit="signup()">
+        <input type="text" ng-model="user.name" placeholder="Name" required>
+        <input type="email" ng-model="user.email" placeholder="Email" required>
+        <input type="password" ng-model="user.password" placeholder="Password" required>
+        <input type="number" ng-model="user.latitude" placeholder="Latitude" required>
+        <input type="number" ng-model="user.longitude" placeholder="Longitude" required>
+
+        <input ng-click="UploadTask()" id="fileinput" type="file" accept="image/*">
+        <button type="submit">Signup</button>
+    </form>
+    <a href="#/login">Already have an account? Login</a>
+</div>

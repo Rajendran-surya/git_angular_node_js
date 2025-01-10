@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="courseApp">
+<head>
+    <title>Course Management</title>
+    <base href="/">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services/authService.js"></script>
+    <script src="services/courseService.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/signupController.js"></script>
+    <script src="controllers/dashboardController.js"></script>
+</head>
+<body>
+    <div ng-view></div>
+</body>
+</html>
